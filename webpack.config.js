@@ -68,6 +68,21 @@ module.exports = {
              * Se copia de la carpeta video en el dist
              * Este Path tomara la ruta del dist y lo colocara en el html
              */
+            test: /.(ttf|otf)$/i,  
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/', 
+              publicPath: 'fonts/',
+            }
+          },
+          { 
+            /**
+             * Se utiliza el cargador de archivos
+             * Toma el nombre del archivo y su extension
+             * Se copia de la carpeta video en el dist
+             * Este Path tomara la ruta del dist y lo colocara en el html
+             */
             test: /.(mp4|mov)$/i,  
             loader: 'file-loader',
             options: {

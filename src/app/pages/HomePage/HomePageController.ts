@@ -13,6 +13,7 @@ export class HomePageController {
          * ESTA ES LA PARTE DE OROZCO
          */
         let animacion30 = document.getElementById('animadito');
+        let quiensoy = document.getElementById('Quien_Soy');
         
         /**
          * ESTA ES LA PARTE DE CARLOS
@@ -42,8 +43,7 @@ export class HomePageController {
         let positionObj2 = animacion2.getBoundingClientRect().top;
         let positionObj3 = animacion3.getBoundingClientRect().top;
 
-        //LOBO
-        console.log("Works Loaded");
+        //Seleccion de LOBO
         let any1 = document.getElementById('sec1');
         let any2 = document.getElementById('sec2');
         let any3 = document.getElementById('sec3');
@@ -56,8 +56,13 @@ export class HomePageController {
         let Pobj4 = any4.getBoundingClientRect().top;
         let Pobj5 = any5.getBoundingClientRect().top;
         
+        let PositionQuien = quiensoy.getBoundingClientRect().top;
+
         window.onscroll = (_:any) =>{
 
+            if(window.scrollY+window.innerHeight >= PositionQuien){
+                // quiensoy.style.background = `${scrollY}%`;
+            }
             animacion30.style.opacity= '1';
             /**
              * se realiza una comparacion entre la posicion del objeto
@@ -85,8 +90,10 @@ export class HomePageController {
                 animacion2.style.opacity= '1';
                 animacion3.style.animation = 'aparecer 2s ease-out';
                 animacion3.style.opacity= '1';
+
                 animacion4.style.animation = 'aparecer 2s ease-out';
-                animacion4.style.opacity= '1';
+                animacion4.style.opacity = '1'; 
+
                 animacion5.style.animation = 'aparecer 2s ease-out';
                 animacion5.style.opacity= '1';
                 animacion5.style.animation = 'aparecer 2s ease-out';
@@ -103,30 +110,30 @@ export class HomePageController {
                 
             }
             //CONDICIONES LOBO
-            console.log(window.scrollY);
             if((window.scrollY+window.innerHeight/2)>=Pobj1){
                 any1.style.opacity='1';
-                console.log("entro1")
+        
             }
             if((window.scrollY+window.innerHeight/2)>=Pobj2){
                 any2.style.opacity='1';
-                console.log("entro2")
+                
             }
             if((window.scrollY+window.innerHeight/2)>=Pobj3){
                 any3.style.opacity='1';
-                console.log("entro3")
+                
             }
             if((window.scrollY+window.innerHeight/2)>=Pobj4){
                 any4.style.opacity='1';
-                console.log("entro4")
+                
             }
             if((window.scrollY+window.innerHeight/2)>=Pobj5){
                 any5.style.opacity='1';
-                console.log("entro5")
+                
             }
         }  
         
     }
+
     constructor() { 
         
     }
