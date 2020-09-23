@@ -1,23 +1,18 @@
 const view = require('./HomePage.html');
 const style= require('./HomePageStyle.scss');
-const audio1= new Audio('../../../assets/Audio/Sonido_Crispetas_mp3cut.net.mp3');
-const audio2= new Audio('../../../assets/Audio/Ambiente_en_la_ciudad_peatones_y_coches_Efecto_de_Sonido_City_ambience_Sound_Effect_mp3cut.net.mp3');
-const audio3= new Audio('../../../assets/Audio/PS2_Startup_Screen_-_Sound_Effect_HD_mp3cut.net.mp3');
 
 // const palomitas = document.querySelector('#cine');
 
 export class HomePageController {
 
     // palomitas=palomitas;
-    audio1=audio1;
-    audio2=audio2;
-    audio3=audio3;
+    
     view = view;
     style=style;
     viewId: string = "Home-page"
-
+    
     start(){
-
+        document.getElementById('load').style.display='none';
         /**
          * ESTA ES LA PARTE DE OROZCO
          */
@@ -34,13 +29,13 @@ export class HomePageController {
         let animacion = document.getElementById('flecha');
         let animacion1 = document.getElementById('flecha2');
         let animacion1_1 = document.getElementById('flecha3');
-
+        
         let animacion2 = document.getElementById('proyectos1');
         let animacion3 = document.getElementById('proyectos2');
         let animacion4 = document.getElementById('proyectos3');
         let animacion5 = document.getElementById('proyectos4');
         let animacion6 = document.getElementById('proyectos5');
-
+        
         let animaciontext = document.getElementById('text2');
         let animaciontext2 = document.getElementById('text3');
         let animaciontext3 = document.getElementById('text4');
@@ -51,7 +46,7 @@ export class HomePageController {
         let positionObj1 = animacion.getBoundingClientRect().top;
         let positionObj2 = animacion2.getBoundingClientRect().top;
         let positionObj3 = animacion3.getBoundingClientRect().top;
-
+        
         //Seleccion de LOBO
         let any1 = document.getElementById('sec1');
         let any2 = document.getElementById('sec2');
@@ -74,7 +69,7 @@ export class HomePageController {
                 // console.log(quiensoy.style.left);
                 console.log((window.scrollY-700)/10);
             }
-
+            
             animacion30.style.opacity= '1';
             /**
              * se realiza una comparacion entre la posicion del objeto
@@ -102,10 +97,10 @@ export class HomePageController {
                 animacion2.style.opacity= '1';
                 animacion3.style.animation = 'aparecer 2s ease-out';
                 animacion3.style.opacity= '1';
-
+                
                 animacion4.style.animation = 'aparecer 2s ease-out';
                 animacion4.style.opacity = '1'; 
-
+                
                 animacion5.style.animation = 'aparecer 2s ease-out';
                 animacion5.style.opacity= '1';
                 animacion5.style.animation = 'aparecer 2s ease-out';
@@ -147,7 +142,7 @@ export class HomePageController {
         
         
     }
-
+    
     constructor() { 
         
     }
@@ -156,18 +151,26 @@ export class HomePageController {
         return [this.viewId, document.createRange().createContextualFragment(view)];
     }
     play(){
+        //se selecciona las nuevas instancias para el audio
+        const audio1= new Audio('../../../assets/Audio/Sonido_Crispetas_mp3cut.net.mp3');
+        const audio2= new Audio('../../../assets/Audio/Timbre.mp3');
+        const audio3= new Audio('../../../assets/Audio/PS2_Startup_Screen_-_Sound_Effect_HD_mp3cut.net.mp3');
+        //se realiza una seleccion del ID al cual realizaremos la funcion onmouseenter
+
         document.getElementById('cine').onmouseenter= () =>{ //cine
-            this.audio1.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
-            this.audio1.volume=0.5;
+            //se reproduce el audio con 50% del volumen cuando el cursos esta encima del icono, el mismo proceso para el resto de iconos
+            audio1.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
+            audio1.volume=0.5;
         }
         document.getElementById('ciudad').onmouseenter= () =>{ //ciudad
-            this.audio2.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
-            this.audio2.volume=0.5;
+            audio2.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
+            audio2.volume=0.5;
         }
         document.getElementById('consola').onmouseenter= () =>{ //consola
-            this.audio3.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
-            this.audio3.volume=0.5;
+            audio3.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
+            audio3.volume=0.5;
         }
+
 
     }
     

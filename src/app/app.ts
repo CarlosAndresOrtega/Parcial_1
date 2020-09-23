@@ -1,11 +1,10 @@
-// import { QuienSoyPageControlls } from './pages/QuienSoy/QuienSoyControlls'
-// import { HabilidadesPageController } from './pages/HabilidadesPage/HabilidadesPageController'
-// import { ClientesPageController} from './pages/Clientes_page/ClientesPageController'
-// import { WorksPageController} from './pages/WorksPage/WorksPageController'
+import{Loading}from './pages/load/load'
 import{HomePageController} from './pages/HomePage/HomePageController'
 class App {
   
+  
   mainPages = [
+    Loading,
     HomePageController
     
   ];
