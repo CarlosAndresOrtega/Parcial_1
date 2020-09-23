@@ -13,7 +13,7 @@ export class HomePageController {
          * ESTA ES LA PARTE DE OROZCO
          */
         let animacion30 = document.getElementById('animadito');
-        let quiensoy = document.getElementById('Quien_Soy');
+        let quiensoy = document.getElementById('identity');
         
         /**
          * ESTA ES LA PARTE DE CARLOS
@@ -60,9 +60,12 @@ export class HomePageController {
 
         window.onscroll = (_:any) =>{
 
-            if(window.scrollY+window.innerHeight >= PositionQuien){
-                // quiensoy.style.background = `${scrollY}%`;
+            if(window.scrollY+window.innerHeight/2 >= PositionQuien){
+                quiensoy.style.left = `${(window.scrollY-700)/10}%`;
+                // console.log(quiensoy.style.left);
+                console.log((window.scrollY-700)/10);
             }
+
             animacion30.style.opacity= '1';
             /**
              * se realiza una comparacion entre la posicion del objeto
