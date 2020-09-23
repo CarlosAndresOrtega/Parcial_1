@@ -1,12 +1,21 @@
 const view = require('./HomePage.html');
 const style= require('./HomePageStyle.scss');
+const audio1= new Audio('../../../assets/Audio/Sonido_Crispetas_mp3cut.net.mp3');
+const audio2= new Audio('../../../assets/Audio/Ambiente_en_la_ciudad_peatones_y_coches_Efecto_de_Sonido_City_ambience_Sound_Effect_mp3cut.net.mp3');
+const audio3= new Audio('../../../assets/Audio/PS2_Startup_Screen_-_Sound_Effect_HD_mp3cut.net.mp3');
+
+// const palomitas = document.querySelector('#cine');
 
 export class HomePageController {
-    
+
+    // palomitas=palomitas;
+    audio1=audio1;
+    audio2=audio2;
+    audio3=audio3;
     view = view;
     style=style;
     viewId: string = "Home-page"
-    
+
     start(){
 
         /**
@@ -134,6 +143,8 @@ export class HomePageController {
                 
             }
         }  
+        this.play();
+        
         
     }
 
@@ -144,5 +155,22 @@ export class HomePageController {
     getView(): [string, DocumentFragment] {
         return [this.viewId, document.createRange().createContextualFragment(view)];
     }
+    play(){
+        document.getElementById('cine').onmouseenter= () =>{ //cine
+            this.audio1.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
+            this.audio1.volume=0.5;
+        }
+        document.getElementById('ciudad').onmouseenter= () =>{ //ciudad
+            this.audio2.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
+            this.audio2.volume=0.5;
+        }
+        document.getElementById('consola').onmouseenter= () =>{ //consola
+            this.audio3.play().then().catch(err => console.log(`No tienes ninguna cancion puesta we `));
+            this.audio3.volume=0.5;
+        }
+
+    }
+    
+    
   
 }

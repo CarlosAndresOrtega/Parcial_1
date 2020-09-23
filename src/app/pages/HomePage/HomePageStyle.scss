@@ -115,6 +115,10 @@ $color-claro0: #FFF;
                 transition: 1s all;
                 color: $color_Blue1;
                 font-family:'Texto';
+                font-size: 2rem;
+                background-color:$color_Blue3;
+                border-radius: 5px;
+                padding: 0px;
 
                 
             }
@@ -126,6 +130,7 @@ $color-claro0: #FFF;
         }
         .icono:hover{
             p{
+                padding: 5px;
                 max-height: 100px;
                 transition: 1s;
                 cursor: url(../../../assets/img/cursor.svg) 20 20,pointer;
@@ -244,6 +249,7 @@ $color-claro0: #FFF;
             width: 340px;
             height: 140px;
             cursor: url(../../../assets/img/cursor.svg) 20 20,pointer;
+            font-size: 25px;
             
         }
         #text2:active{
@@ -277,6 +283,7 @@ $color-claro0: #FFF;
             width: 340px;
             height: 140px;
             cursor: url(../../../assets/img/cursor.svg) 20 20,pointer;
+            font-size: 25px;
         }
         #text3:active{
             width: 340px;
@@ -309,6 +316,7 @@ $color-claro0: #FFF;
             width: 340px;
             height: 140px;
             cursor: url(../../../assets/img/cursor.svg) 20 20,pointer;
+            font-size: 25px;
         }
         #text4:active{
             width: 340px;
